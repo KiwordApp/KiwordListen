@@ -1,5 +1,8 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
 @import "./styles/theme.css";
+@import "./kiword/ui/theme/variables.css";
 
 /* Register the shared color tokens (src/styles/theme.css) as Tailwind
    utilities */
@@ -11,12 +14,88 @@
   --color-logo-stroke: var(--color-logo-stroke);
   --color-text-stroke: var(--color-text-stroke);
   --color-mid-gray: var(--color-mid-gray);
-  --color-warning: var(--color-warning);
-  --color-error: var(--color-error);
+
+  --color-kw-primary-50: var(--kw-color-primary-50);
+  --color-kw-primary-100: var(--kw-color-primary-100);
+  --color-kw-primary-200: var(--kw-color-primary-200);
+  --color-kw-primary-300: var(--kw-color-primary-300);
+  --color-kw-primary-400: var(--kw-color-primary-400);
+  --color-kw-primary-500: var(--kw-color-primary-500);
+  --color-kw-primary-600: var(--kw-color-primary-600);
+  --color-kw-primary-700: var(--kw-color-primary-700);
+  --color-kw-primary-800: var(--kw-color-primary-800);
+  --color-kw-primary-900: var(--kw-color-primary-900);
+  --color-kw-secondary-50: var(--kw-color-secondary-50);
+  --color-kw-secondary-100: var(--kw-color-secondary-100);
+  --color-kw-secondary-200: var(--kw-color-secondary-200);
+  --color-kw-secondary-300: var(--kw-color-secondary-300);
+  --color-kw-secondary-400: var(--kw-color-secondary-400);
+  --color-kw-secondary-500: var(--kw-color-secondary-500);
+  --color-kw-secondary-600: var(--kw-color-secondary-600);
+  --color-kw-secondary-700: var(--kw-color-secondary-700);
+  --color-kw-secondary-800: var(--kw-color-secondary-800);
+  --color-kw-secondary-900: var(--kw-color-secondary-900);
+  --color-kw-gray-50: var(--kw-color-gray-50);
+  --color-kw-gray-100: var(--kw-color-gray-100);
+  --color-kw-gray-200: var(--kw-color-gray-200);
+  --color-kw-gray-300: var(--kw-color-gray-300);
+  --color-kw-gray-400: var(--kw-color-gray-400);
+  --color-kw-gray-500: var(--kw-color-gray-500);
+  --color-kw-gray-600: var(--kw-color-gray-600);
+  --color-kw-gray-700: var(--kw-color-gray-700);
+  --color-kw-gray-800: var(--kw-color-gray-800);
+  --color-kw-gray-900: var(--kw-color-gray-900);
+  --color-kw-white: var(--kw-color-white);
+  --color-kw-black: var(--kw-color-black);
+  --color-kw-success: var(--kw-color-success);
+  --color-kw-warning: var(--kw-color-warning);
+  --color-kw-error: var(--kw-color-error);
+  --color-kw-info: var(--kw-color-info);
+  --color-kw-bg-page: var(--kw-bg-page);
+  --color-kw-bg-card: var(--kw-bg-card);
+  --color-kw-text-primary: var(--kw-text-primary);
+  --color-kw-text-secondary: var(--kw-text-secondary);
+  --color-kw-text-muted: var(--kw-text-muted);
+  --color-kw-border: var(--kw-border);
+  --color-kw-bg-hover: var(--kw-bg-hover);
+  --color-kw-border-subtle: var(--kw-border-subtle);
+  --color-kw-border-strong: var(--kw-border-strong);
+  --color-kw-bg-input: var(--kw-bg-input);
+
+  --color-kw-accent-50: var(--kw-color-accent-50);
+  --color-kw-accent-100: var(--kw-color-accent-100);
+  --color-kw-accent-200: var(--kw-color-accent-200);
+  --color-kw-accent-300: var(--kw-color-accent-300);
+  --color-kw-accent-400: var(--kw-color-accent-400);
+  --color-kw-accent-500: var(--kw-color-accent-500);
+  --color-kw-accent-600: var(--kw-color-accent-600);
+  --color-kw-accent-700: var(--kw-color-accent-700);
+  --color-kw-accent-800: var(--kw-color-accent-800);
+  --color-kw-accent-900: var(--kw-color-accent-900);
+
+  --font-kw-display: var(--kw-font-display);
+  --font-kw-body: var(--kw-font-body);
+
+  --radius-kw-sm: var(--kw-radius-sm);
+  --radius-kw: var(--kw-radius);
+  --radius-kw-md: var(--kw-radius-md);
+  --radius-kw-lg: var(--kw-radius-lg);
+  --radius-kw-xl: var(--kw-radius-xl);
+  --radius-kw-2xl: var(--kw-radius-2xl);
+  --radius-kw-3xl: var(--kw-radius-3xl);
+  --radius-kw-full: var(--kw-radius-full);
+
+  --shadow-kw-sm: var(--kw-shadow-sm);
+  --shadow-kw: var(--kw-shadow);
+  --shadow-kw-md: var(--kw-shadow-md);
+  --shadow-kw-lg: var(--kw-shadow-lg);
+  --shadow-kw-xl: var(--kw-shadow-xl);
+  --shadow-kw-2xl: var(--kw-shadow-2xl);
 }
 
 :root {
   /* Typography */
+  font-family: var(--kw-font-body);
   font-size: 15px;
   line-height: 24px;
   font-weight: 400;
@@ -54,6 +133,14 @@
   text-align: center;
 }
 
+:root.dark {
+  /* Colors - Dark Theme */
+  --color-text: #fbfbfb;
+  --color-background: #2c2b29;
+  --color-logo-primary: #3b82f6;
+  --color-logo-stroke: #fad1ed;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     /* Just a bit darker than the (already dark) background, keeping its warm tint */
@@ -61,10 +148,25 @@
   }
 }
 
-/* Keep onboarding centered when classic scrollbars consume layout space.
-   Overlay scrollbars do not reserve a gutter, so this has no effect on them. */
-:root[data-onboarding-active] {
-  scrollbar-gutter: stable both-edges;
+/*
+ * Explicit theme override, driven by the `theme` setting via
+ * `document.documentElement.dataset.theme`. When set, the higher-specificity
+ * attribute selectors win over the `prefers-color-scheme` media query above,
+ * so a user can keep Handy light or dark regardless of the OS setting.
+ * `system` (or no attribute) leaves the OS in charge.
+ */
+:root[data-theme="light"] {
+  --color-text: var(--light-color-text);
+  --color-background: var(--light-color-background);
+  --color-logo-primary: var(--light-color-logo-primary);
+  --color-logo-stroke: var(--light-color-logo-stroke);
+}
+
+:root[data-theme="dark"] {
+  --color-text: var(--dark-color-text);
+  --color-background: var(--dark-color-background);
+  --color-logo-primary: var(--dark-color-logo-primary);
+  --color-logo-stroke: var(--dark-color-logo-stroke);
 }
 
 /* macOS - tint native overlay scrollbar thumb */
@@ -72,15 +174,17 @@
   scrollbar-color: var(--scrollbar-thumb) transparent;
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
+/* Custom Scrollbar - only on Windows/Linux; macOS uses native overlay scrollbars */
+:root:not([data-platform="macos"]) ::-webkit-scrollbar {
   width: 14px;
   height: 14px;
 }
-::-webkit-scrollbar-track {
+
+:root:not([data-platform="macos"]) ::-webkit-scrollbar-track {
   background: transparent;
 }
-::-webkit-scrollbar-thumb {
+
+:root:not([data-platform="macos"]) ::-webkit-scrollbar-thumb {
   background-color: var(--scrollbar-thumb);
   border-radius: 20px;
   border: 3px solid transparent;
@@ -89,7 +193,8 @@
   background-clip: content-box;
   min-height: 32px;
 }
-::-webkit-scrollbar-thumb:hover {
+
+:root:not([data-platform="macos"]) ::-webkit-scrollbar-thumb:hover {
   background-color: var(--scrollbar-thumb-hover);
 }
 

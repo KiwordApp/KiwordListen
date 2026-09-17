@@ -1,0 +1,273 @@
+/* ===== 字体声明 (OFL 开源商用) ===== */
+
+/* Outfit - 标题字体 (圆润几何感，温暖不幼稚) */
+@font-face {
+  font-family: "Outfit";
+  src: url("./fonts/Outfit-Variable.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+/* Inter - 正文字体 (高可读性，专业中性) */
+@font-face {
+  font-family: "Inter";
+  src: url("./fonts/Inter-Variable.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+/* ===== 字体家族令牌 ===== */
+:root,
+.kiword-theme {
+  --kw-font-display: "Outfit", system-ui, sans-serif;
+  --kw-font-body: "Inter", system-ui, sans-serif;
+}
+
+/* ===== 颜色系统 ===== */
+
+@layer base {
+  :root,
+  .kiword-theme {
+    /* Primary - Indigo 靛蓝系 (Linear/Raycast 风格) */
+    --kw-color-primary-50: #eef2ff;
+    --kw-color-primary-100: #e0e7ff;
+    --kw-color-primary-200: #c7d2fe;
+    --kw-color-primary-300: #a5b4fc;
+    --kw-color-primary-400: #818cf8;
+    --kw-color-primary-500: #6366f1; /* 主色：Electric Indigo，科技感 */
+    --kw-color-primary-600: #4f46e5;
+    --kw-color-primary-700: #4338ca;
+    --kw-color-primary-800: #3730a3;
+    --kw-color-primary-900: #312e81;
+
+    /* Secondary - 琥珀金 */
+    --kw-color-secondary-50: #fffbeb;
+    --kw-color-secondary-100: #fef3c7;
+    --kw-color-secondary-200: #fde68a;
+    --kw-color-secondary-300: #fcd34d;
+    --kw-color-secondary-400: #fbbf24;
+    --kw-color-secondary-500: #f59e0b; /* 主色：琥珀金，温暖质感 */
+    --kw-color-secondary-600: #d97706;
+    --kw-color-secondary-700: #b45309;
+    --kw-color-secondary-800: #92400e;
+    --kw-color-secondary-900: #78350f;
+
+    /* Accent - 暖橙（成就徽章、正向反馈） */
+    --kw-color-accent-50: #fff7ed;
+    --kw-color-accent-100: #ffedd5;
+    --kw-color-accent-200: #fed7aa;
+    --kw-color-accent-300: #fdba74;
+    --kw-color-accent-400: #fb923c;
+    --kw-color-accent-500: #f97316; /* 主色：活力橙 */
+    --kw-color-accent-600: #ea580c;
+    --kw-color-accent-700: #c2410c;
+    --kw-color-accent-800: #9a3412;
+    --kw-color-accent-900: #7c2d12;
+
+    /* Neutral - 暖灰体系（基于暖纸底色 #f5f4f2） */
+    --kw-color-white: #ffffff;
+    --kw-color-gray-50: #f5f4f2;
+    --kw-color-gray-100: #f0eeeb;
+    --kw-color-gray-200: #e6e3dd;
+    --kw-color-gray-300: #d4d0c8;
+    --kw-color-gray-400: #b8b3a8;
+    --kw-color-gray-500: #8c877a;
+    --kw-color-gray-600: #6b6659;
+    --kw-color-gray-700: #4a453b;
+    --kw-color-gray-800: #2d2922;
+    --kw-color-gray-900: #1a1713;
+    --kw-color-black: #000000;
+
+    /* Status 状态色 */
+    --kw-color-success: #10b981;
+    --kw-color-warning: #f59e0b;
+    --kw-color-error: #ef4444;
+    --kw-color-info: #6366f1;
+
+    /* Border 微边框层级（替代实色边框，营造玻璃感） */
+    --kw-border-subtle: rgba(0, 0, 0, 0.06);
+    --kw-border-strong: rgba(0, 0, 0, 0.12);
+
+    /* Input 输入控件背景 */
+    --kw-bg-input: #ffffff;
+
+    /* Semantic Colors 语义色（浅色） */
+    --kw-bg-page: #f9f9ff;
+    --kw-bg-card: #ffffff; /* 与 bg-page 区分的纯净卡片底色 */
+    --kw-text-primary: var(--kw-color-gray-900);
+    --kw-text-secondary: var(--kw-color-gray-600);
+    --kw-text-muted: var(--kw-color-gray-500);
+    --kw-border: var(--kw-color-gray-200);
+
+    /* Interactive States */
+    --kw-bg-hover: var(--kw-color-primary-50);
+
+    /* Shadows - 中性黑影（通用深浅主题） */
+    --kw-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --kw-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+    --kw-shadow-md:
+      0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+    --kw-shadow-lg:
+      0 10px 15px -3px rgba(0, 0, 0, 0.06), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+    --kw-shadow-xl:
+      0 20px 25px -5px rgba(0, 0, 0, 0.06), 0 10px 10px -5px rgba(0, 0, 0, 0.03);
+    --kw-shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+
+    /* Radius 圆角 */
+    --kw-radius-sm: 0.125rem;
+    --kw-radius: 0.25rem;
+    --kw-radius-md: 0.375rem;
+    --kw-radius-lg: 0.5rem;
+    --kw-radius-xl: 0.75rem;
+    --kw-radius-2xl: 1rem;
+    --kw-radius-3xl: 1.5rem;
+    --kw-radius-full: 9999px;
+  }
+
+  /* ===== 暗色主题（冷锌灰色系，Linear/Raycast 风格） ===== */
+
+  :root.dark,
+  .dark .kiword-theme,
+  .kiword-theme.dark {
+    /* 背景层级：从深到浅的冷灰 */
+    --kw-bg-page: #09090b;
+    --kw-bg-card: #18181b;
+    --kw-bg-input: #27272a;
+    /* 文本层级：高对比度三级 */
+    --kw-text-primary: #fafafa;
+    --kw-text-secondary: #a1a1aa;
+    --kw-text-muted: #71717a;
+    /* 微边框：玻璃感替代实色边框 */
+    --kw-border: rgba(255, 255, 255, 0.08);
+    --kw-border-subtle: rgba(255, 255, 255, 0.06);
+    --kw-border-strong: rgba(255, 255, 255, 0.14);
+    /* 交互态 */
+    --kw-bg-hover: rgba(255, 255, 255, 0.06);
+  }
+
+  /* OS 暗色模式自动跟随 */
+  @media (prefers-color-scheme: dark) {
+    :root:not(.light),
+    :root:not(.light) .kiword-theme,
+    .kiword-theme:not(.light) {
+      --kw-bg-page: #09090b;
+      --kw-bg-card: #18181b;
+      --kw-bg-input: #27272a;
+      --kw-text-primary: #fafafa;
+      --kw-text-secondary: #a1a1aa;
+      --kw-text-muted: #71717a;
+      --kw-border: rgba(255, 255, 255, 0.08);
+      --kw-border-subtle: rgba(255, 255, 255, 0.06);
+      --kw-border-strong: rgba(255, 255, 255, 0.14);
+      --kw-bg-hover: rgba(255, 255, 255, 0.06);
+    }
+  }
+
+  /* 强制浅色 */
+  :root.light,
+  .light .kiword-theme,
+  .kiword-theme.light {
+    --kw-bg-page: var(--kw-color-gray-50);
+    --kw-bg-card: #fdfcfb;
+    --kw-bg-input: #ffffff;
+    --kw-text-primary: var(--kw-color-gray-900);
+    --kw-text-secondary: var(--kw-color-gray-600);
+    --kw-text-muted: var(--kw-color-gray-500);
+    --kw-border: var(--kw-color-gray-200);
+    --kw-border-subtle: rgba(0, 0, 0, 0.06);
+    --kw-border-strong: rgba(0, 0, 0, 0.12);
+    --kw-bg-hover: var(--kw-color-primary-50);
+  }
+
+  /* ===== Legacy 兼容层 ===== */
+
+  .kiword-legacy-override {
+    --color-background-ui: var(--kw-color-primary-500);
+    --color-logo-primary: var(--kw-color-primary-500);
+    --color-mid-gray: var(--kw-color-gray-500);
+    --color-background: var(--kw-bg-card);
+    --color-text: var(--kw-text-primary);
+  }
+
+  .kiword-legacy-override .border-logo-primary,
+  .border-logo-primary {
+    border-color: var(--kw-color-primary-500) !important;
+  }
+
+  .kiword-legacy-override .border-t-transparent,
+  .border-t-transparent {
+    border-top-color: transparent !important;
+  }
+
+  .dark .kiword-legacy-override {
+    --color-mid-gray: var(--kw-color-gray-400);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not(.light) .kiword-legacy-override {
+      --color-mid-gray: var(--kw-color-gray-400);
+    }
+  }
+
+  :root.light .kiword-legacy-override .bg-mid-gray\/20,
+  .light .kiword-legacy-override .bg-mid-gray\/20 {
+    background-color: var(--kw-color-gray-200) !important;
+    color: var(--kw-color-gray-600) !important;
+  }
+
+  :root.light .kiword-legacy-override .bg-green-100,
+  .light .kiword-legacy-override .bg-green-100 {
+    background-color: #dcfce7 !important;
+    color: #166534 !important;
+  }
+
+  /* ToggleSwitch 覆盖 */
+  .kiword-legacy-override input.peer:not(:checked) ~ div {
+    background-color: var(--kw-color-gray-300) !important;
+  }
+  :root.light .kiword-legacy-override input.peer:not(:checked) ~ div,
+  .light .kiword-legacy-override input.peer:not(:checked) ~ div {
+    background-color: var(--kw-color-gray-300) !important;
+  }
+  .dark .kiword-legacy-override input.peer:not(:checked) ~ div {
+    background-color: var(--kw-color-gray-600) !important;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not(.light) .kiword-legacy-override input.peer:not(:checked) ~ div {
+      background-color: var(--kw-color-gray-600) !important;
+    }
+  }
+
+  .kiword-legacy-override input.peer:not(:checked) ~ div::after,
+  .kiword-legacy-override input.peer:checked ~ div::after {
+    background-color: var(--kw-color-white) !important;
+    border-color: var(--kw-color-white) !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  :root.light .kiword-legacy-override input.peer:checked ~ div.bg-mid-gray\/20,
+  .light .kiword-legacy-override input.peer:checked ~ div.bg-mid-gray\/20,
+  .dark .kiword-legacy-override input.peer:checked ~ div,
+  .kiword-legacy-override input.peer:checked ~ div {
+    background-color: var(--kw-color-primary-500) !important;
+  }
+
+  /* Active Badge / Update Text */
+  .kiword-legacy-override .bg-logo-primary {
+    background-color: var(--kw-color-primary-500) !important;
+    color: var(--kw-color-white) !important;
+  }
+  .kiword-legacy-override .bg-logo-primary .text-background {
+    color: var(--kw-color-white) !important;
+  }
+  .kiword-legacy-override .text-logo-primary,
+  .kiword-legacy-override .border-logo-primary,
+  .text-logo-primary,
+  .border-logo-primary {
+    color: var(--kw-color-primary-500) !important;
+    border-color: var(--kw-color-primary-500) !important;
+  }
+}
