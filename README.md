@@ -2,22 +2,26 @@
 
 <div align="center">
 
-<img src="https://www.kiword.top/assets/logo.webp" alt="Kiword Listen — offline AI meeting transcription with speaker recognition" width="96" />
+<img src="https://www.kiword.top/assets/logo.webp" alt="Kiword Listen — on-device AI meeting transcription with Claude MCP" width="96" />
 
 **Offline AI meeting & lecture transcription with speaker recognition — 100% on-device, zero cloud.**
 
-[Website](https://www.kiword.top/) · [Download](https://www.kiword.top/download) · [Issue Tracker](https://github.com/KiwordApp/KiwordListen/issues) · [Upstream: Handy](https://github.com/cjpais/Handy)
+[Website](https://www.kiword.top/) · [Download](https://www.kiword.top/download) · [Discord Community](https://discord.gg/5Q5N7zKCH) · [Issue Tracker](https://github.com/KiwordApp/KiwordListen/issues) · [Upstream: Handy](https://github.com/cjpais/Handy)
 
 ![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11-0078D6?logo=windows11&logoColor=white)
+![Privacy](https://img.shields.io/badge/Privacy-100%25%20On--Device-success)
 ![License](https://img.shields.io/badge/core%20license-MIT-green)
 ![Built on Handy](https://img.shields.io/badge/built%20on-Handy-8A2BE2)
-![Claude MCP](https://img.shields.io/badge/Claude-MCP%20ready-00A4E4)
+![MCP](https://img.shields.io/badge/MCP-Claude%20%26%20ChatGPT%20Ready-00A4E4)
+![Granola Alternative](https://img.shields.io/badge/Granola%20Alternative-For%20Windows-blueviolet)
 
 </div>
 
-**Kiword Listen** is a privacy-first desktop app that turns meetings and lectures into structured, searchable transcripts — entirely on your PC. It captures audio at the **process level** (only Zoom, Teams, or your browser — never your email pings), recognizes **who is speaking** with an on-device voiceprint engine, and lets Claude act as your real-time meeting assistant through a **local MCP server**. No audio, transcript, or voiceprint ever leaves your machine.
+**Kiword Listen** is a privacy-first desktop app that turns meetings and lectures into structured, searchable transcripts — entirely on your PC. It captures audio at the **process level** (only Zoom, Teams, or your browser — never your email pings), recognizes **who is speaking** with an on-device voiceprint engine, and lets your AI agents — **Claude, ChatGPT, Cursor** — act as real-time meeting assistants through a **local MCP server**. No audio, transcript, or voiceprint ever leaves your machine.
 
 > *"The on-device auditory intelligence for your AI agents. 100% private, zero-cloud."*
+
+> **🚀 Looking for a [Granola](https://www.granola.ai/) alternative for Windows? Tired of meeting bots joining your Zoom and Teams calls?** Kiword Listen is the privacy-first alternative: no bots invited, no virtual audio cables, and zero audio ever leaves your PC — your AI agents stay in the loop through a local MCP server instead.
 
 Kiword Listen is built on top of [Handy](https://github.com/cjpais/Handy), the open-source offline speech-to-text project, and extends it with process-loopback capture, speaker recognition, AI-agent integration, and meeting/lecture workflows.
 
@@ -30,7 +34,7 @@ Kiword Listen is built on top of [Handy](https://github.com/cjpais/Handy), the o
 | Virtual audio drivers | **Not required** (native WASAPI loopback) | Often required |
 | Speaker recognition | **On-device** voiceprints | Uploaded to cloud |
 | Works offline | **Yes** | No |
-| AI assistant access | **Local MCP server** for Claude | Vendor-locked |
+| AI assistant access | **Local MCP server** — Claude, ChatGPT, Cursor | Vendor-locked |
 
 ## Core Features
 
@@ -64,11 +68,11 @@ Kiword Listen is built on top of [Handy](https://github.com/cjpais/Handy), the o
 - Full-text keyword search with highlighting, powered by **SQLite FTS5**.
 - Delete single sessions or batch-clean cached audio to reclaim disk space.
 
-### Claude Integration via Local MCP Server
+### AI Agent Integration via Local MCP Server (Claude, ChatGPT, Codex, Cursor)
 
-Kiword Listen ships a local MCP server (`kiword-mcp-server.exe`, stdio protocol). A **"One-Click Connect to Claude Desktop"** button writes the config into `%APPDATA%\Claude\claude_desktop_config.json` for you.
+Kiword Listen ships a local MCP server (`kiword-mcp-server.exe`, stdio protocol) that works with any MCP-compatible client — **Claude Desktop, ChatGPT Desktop, OpenAI Codex, Cursor, and more**. A **"One-Click Connect to Claude Desktop"** button writes the config into `%APPDATA%\Claude\claude_desktop_config.json` for you; other clients simply point at the same stdio command.
 
-Tools exposed to Claude and other AI agents:
+Tools exposed to your AI agents:
 
 | Tool | Description |
 | --- | --- |
@@ -100,7 +104,7 @@ Tools exposed to Claude and other AI agents:
 
 - [x] Monorepo based on the Handy upstream core
 - [ ] **Phase 1** — WASAPI process-loopback capture, local Whisper transcription, Markdown/HTML export, history UI
-- [ ] **Phase 2** — Voice ID with SQLite voiceprint persistence, Local MCP Server for Claude Desktop, Google Contacts sync
+- [ ] **Phase 2** — Voice ID with SQLite voiceprint persistence, Local MCP Server for Claude Desktop, ChatGPT, and other MCP clients, Google Contacts sync
 - [ ] **Phase 3** — Claude-driven email & task automation, live bilingual subtitle overlay, Founders Club beta
 
 ## Availability
