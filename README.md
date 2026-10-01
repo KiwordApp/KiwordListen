@@ -527,24 +527,6 @@ Update to a newer release, and replace any `pkill -USR1 -n handy` keybindings wi
 
 The goal is to create both a useful tool and a foundation for others to build upon—a well-patterned, simple codebase that serves the community.
 
-## Sponsors
-
-<div align="center">
-  We're grateful for the support of our sponsors who help make Handy possible:
-  <br><br>
-  <a href="https://wordcab.com">
-    <img src="sponsor-images/wordcab.png" alt="Wordcab" width="120" height="120">
-  </a>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://github.com/epicenter-so/epicenter">
-    <img src="sponsor-images/epicenter.png" alt="Epicenter" width="120" height="120">
-  </a>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://boltai.com?utm_source=handy">
-    <img src="sponsor-images/boltai.jpg" alt="Bolt AI" width="120" height="120">
-  </a>
-</div>
-
 ## Related Projects
 
 - **[Handy CLI](https://github.com/cjpais/handy-cli)** - The original Python command-line version
